@@ -26,23 +26,7 @@ function create(){
     paddle2.scale.setTo(1.5);
     
     // buttons
-    buttonUp = game.add.image(560,260,'button');
-    buttonUp.anchor.setTo(.5);
-    buttonUp.scale.setTo(.7);
-    buttonUp.angle=-90;
-    buttonUp.alpha=.5;
-    buttonUp.inputEnabled = true
-    buttonUp.events.onInputOver.add(function(){up=true;});
-    buttonUp.events.onInputOut.add(function(){up=false;});
-    
-    buttonDown = game.add.image(560,400,'button');
-    buttonDown.anchor.setTo(.5);
-    buttonDown.scale.setTo(.7);
-    buttonDown.angle=90;
-    buttonDown.alpha=.5;
-    buttonDown.inputEnabled = true
-    buttonDown.events.onInputOver.add(function(){down=true;});
-    buttonDown.events.onInputOut.add(function(){down=false;});
+    buttons();
     
     aBallBounce = game.add.audio('aBallBounce');
     aBallHit = game.add.audio('aBallHit');
@@ -154,4 +138,24 @@ function ressalto(sprite, up, down, left, right){
         game.physics.arcade.velocityFromAngle(150,300,ball.body.velocity);
         aBallMissed.play();
     }
+}
+function buttons(){
+    // buttons
+    buttonUp = game.add.image(560,260,'button');
+    buttonUp.anchor.setTo(.5);
+    buttonUp.scale.setTo(.7);
+    buttonUp.angle=-90;
+    buttonUp.alpha=.5;
+    buttonUp.inputEnabled = true
+    buttonUp.events.onInputOver.add(function(){up=true;});
+    buttonUp.events.onInputOut.add(function(){up=false;});
+    
+    buttonDown = game.add.image(560,400,'button');
+    buttonDown.anchor.setTo(.5);
+    buttonDown.scale.setTo(.7);
+    buttonDown.angle=90;
+    buttonDown.alpha=.5;
+    buttonDown.inputEnabled = true
+    buttonDown.events.onInputOver.add(function(){down=true;});
+    buttonDown.events.onInputOut.add(function(){down=false;});
 }
