@@ -86,7 +86,9 @@ function update(){
         chick.animations.play('walk');
     }
     
-    if(!cursors.right.isDown && !cursors.left.isDown && !cursors.down.isDown && !cursors.up.isDown)
+    if(!cursors.right.isDown && !cursors.left.isDown && 
+       !cursors.down.isDown && !cursors.up.isDown &&
+       !up && !down && !left && !right)
         chick.frame=0;
 
 }
