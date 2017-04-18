@@ -1,10 +1,12 @@
-var game=new Phaser.Game(400, 300, Phaser.CANVAS, 'Example', {preload: preload, create: create, update: update});
+var game=new Phaser.Game(800, 400, Phaser.CANVAS, 'Example', {preload: preload, create: create, update: update});
 
 function preload(){
     game.load.image('player','assets/images/player.png');
     game.load.image('target','assets/images/target.png'); 
+    game.load.image('button','assets/images/button.png'); 
 }
 
+var up = down = left = right = false;
 function create(){
     // full screen centered
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -33,20 +35,20 @@ function update(){
 
     player.body.velocity.setTo(0);
 
-    if (cursors.up.isDown)
+    if (cursors.up.isDown || up)
     {
         player.body.velocity.y=-300
     }
-    else if (cursors.down.isDown)
+    else if (cursors.down.isDown || down)
     {
         player.body.velocity.y=300
     }
 
-    if (cursors.left.isDown)
+    if (cursors.left.isDown || left)
     {
         player.body.velocity.x=-300
     }
-    else if (cursors.right.isDown)
+    else if (cursors.right.isDown || right)
     {
         player.body.velocity.x=300
     }
@@ -62,7 +64,7 @@ function endGame(a,b){
 }
 function buttons(){
     // buttons
-    buttonUp = game.add.image(560,260,'button');
+    buttonUp = game.add.image(600,300,'button');
     buttonUp.anchor.setTo(.5);
     buttonUp.scale.setTo(.7);
     buttonUp.angle=-90;
@@ -71,7 +73,7 @@ function buttons(){
     buttonUp.events.onInputOver.add(function(){up=true;});
     buttonUp.events.onInputOut.add(function(){up=false;});
     
-    buttonDown = game.add.image(560,400,'button');
+    buttonDown = game.add.image(600,400,'button');
     buttonDown.anchor.setTo(.5);
     buttonDown.scale.setTo(.7);
     buttonDown.angle=90;
@@ -79,4 +81,22 @@ function buttons(){
     buttonDown.inputEnabled = true
     buttonDown.events.onInputOver.add(function(){down=true;});
     buttonDown.events.onInputOut.add(function(){down=false;});
+    
+    buttonRight = game.add.image(700,400,'button');
+    buttonRight.anchor.setTo(.5);
+    buttonRight.scale.setTo(.7);
+    buttonRight.angle=0;
+    buttonRight.alpha=.5;
+    buttonRight.inputEnabled = true
+    buttonRight.events.onInputOver.add(function(){right=true;});
+    buttonRight.events.onInputOut.add(function(){right=false;});
+    
+    buttonLeft = game.add.image(500,400,'button');
+    buttonLeft.anchor.setTo(.5);
+    buttonLeft.scale.setTo(.7);
+    buttonLeft.angle=180;
+    buttonLeft.alpha=.5;
+    buttonLeft.inputEnabled = true
+    buttonLeft.events.onInputOver.add(function(){left=true;});
+    buttonLeft.events.onInputOut.add(function(){left=false;});
 }
