@@ -8,6 +8,11 @@ function preload(){
 }
 
 function create(){
+    // full screen centered
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    
     chick = game.add.sprite(50,50,'chick');
     chick.anchor.setTo(.5);
     chick.scale.setTo(1.5);

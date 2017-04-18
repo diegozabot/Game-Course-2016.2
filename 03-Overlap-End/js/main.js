@@ -6,6 +6,11 @@ function preload(){
 }
 
 function create(){
+    // full screen centered
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    
     target = game.add.sprite(game.world.centerX, game.world.centerY,'target');
     player= game.add.sprite(0,0,'player');
     player.anchor.setTo(0.5);

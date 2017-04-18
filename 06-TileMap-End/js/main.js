@@ -10,6 +10,11 @@ function preload(){
 }
 
 function create(){
+    // full screen centered
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    
     //fase2
     var map = game.add.tilemap('map');
     map.addTilesetImage('overworld');

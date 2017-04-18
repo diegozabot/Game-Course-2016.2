@@ -17,6 +17,10 @@ function preload(){
 }
 
 function create(){
+    // full screen centered
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
     
     aJump = game.add.audio('jump');
     aEat = game.add.audio('eat');
