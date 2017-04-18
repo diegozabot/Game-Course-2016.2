@@ -79,7 +79,7 @@ function buttons(){
     buttonDown.anchor.setTo(.5);
     buttonDown.scale.setTo(.7);
     buttonDown.angle=90;
-    buttonDown.alpha=.2;
+    buttonDown.alpha=.1;
     buttonDown.inputEnabled = true
     buttonDown.events.onInputOver.add(function(){down=true;});
     buttonDown.events.onInputOut.add(function(){down=false;});
@@ -90,7 +90,7 @@ function buttons(){
     buttonRight.anchor.setTo(.5);
     buttonRight.scale.setTo(.7);
     buttonRight.angle=0;
-    buttonRight.alpha=.3;
+    buttonRight.alpha=.1;
     buttonRight.inputEnabled = true
     buttonRight.events.onInputOver.add(function(){right=true;});
     buttonRight.events.onInputOut.add(function(){right=false;});
