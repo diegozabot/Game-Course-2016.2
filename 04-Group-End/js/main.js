@@ -1,9 +1,11 @@
-var game=new Phaser.Game(640,480, Phaser.CANVAS, 'Example', {preload: preload, create: create, update: update});
+var game=new Phaser.Game(800,400, Phaser.CANVAS, 'Example', {preload: preload, create: create, update: update});
 
 var cherry = 0;
+var up = down = left = right = false;
 function preload(){
     game.load.spritesheet('frutas','assets/images/frutas.png',32,32);
     game.load.spritesheet('chick','assets/images/chick.png',16,18);
+    game.load.image('button','assets/images/button.png');
     
 }
 
@@ -21,8 +23,8 @@ function create(){
     frutas = game.add.group();
     
     for(i=0;i<110;i++){
-        x=game.rnd.between(50,600);
-        y=game.rnd.between(50,440); 
+        x=game.rnd.between(50,750);
+        y=game.rnd.between(50,380); 
         if(i<10) elem=0;
         else elem=game.rnd.between(1,35);
         
@@ -50,6 +52,8 @@ function create(){
                               {font:'14px Arial', fill:'#fff'});
     instruction = game.add.text(game.world.centerX,30, "Eat all cherries!",{font:'40px Arial', fill:'#fff'})
     instruction.anchor.setTo(.5);
+    
+    buttons();
 }
 
 function update(){
@@ -58,24 +62,24 @@ function update(){
     
     chick.body.velocity.setTo(0);
 
-    if (cursors.up.isDown)
+    if (cursors.up.isDown || up)
     {
         chick.body.velocity.y=-200
         chick.animations.play('walk');
     }
-    else if (cursors.down.isDown)
+    else if (cursors.down.isDown || down)
     {
         chick.body.velocity.y=200
         chick.animations.play('walk');
     }
 
-    if (cursors.left.isDown)
+    if (cursors.left.isDown || left)
     {
         chick.body.velocity.x=-200
         chick.scale.x=-1.5;
         chick.animations.play('walk');
     }
-    else if (cursors.right.isDown)
+    else if (cursors.right.isDown || right)
     {
         chick.body.velocity.x=200;
         chick.scale.x=1.5;
@@ -102,4 +106,50 @@ function eat(s1,s2){
     }
         
 
+}
+function buttons(){
+    // buttons
+    buttonUp = game.add.image(80,200,'button');
+    buttonUp.anchor.setTo(.5);
+    buttonUp.scale.setTo(.7);
+    buttonUp.angle=-90;
+    buttonUp.alpha=.1;
+    buttonUp.inputEnabled = true
+    buttonUp.events.onInputOver.add(function(){up=true;});
+    buttonUp.events.onInputOut.add(function(){up=false;});
+    buttonUp.events.onInputDown.add(function(){up=true;});
+    buttonUp.events.onInputUp.add(function(){up=false;});
+    
+    buttonDown = game.add.image(80,330,'button');
+    buttonDown.anchor.setTo(.5);
+    buttonDown.scale.setTo(.7);
+    buttonDown.angle=90;
+    buttonDown.alpha=.1;
+    buttonDown.inputEnabled = true
+    buttonDown.events.onInputOver.add(function(){down=true;});
+    buttonDown.events.onInputOut.add(function(){down=false;});
+    buttonDown.events.onInputDown.add(function(){down=true;});
+    buttonDown.events.onInputUp.add(function(){down=false;});
+    
+    buttonRight = game.add.image(720,330,'button');
+    buttonRight.anchor.setTo(.5);
+    buttonRight.scale.setTo(.7);
+    buttonRight.angle=0;
+    buttonRight.alpha=.1;
+    buttonRight.inputEnabled = true
+    buttonRight.events.onInputOver.add(function(){right=true;});
+    buttonRight.events.onInputOut.add(function(){right=false;});
+    buttonRight.events.onInputDown.add(function(){right=true;});
+    buttonRight.events.onInputUp.add(function(){right=false;});
+    
+    buttonLeft = game.add.image(590,330,'button');
+    buttonLeft.anchor.setTo(.5);
+    buttonLeft.scale.setTo(.7);
+    buttonLeft.angle=180;
+    buttonLeft.alpha=.1;
+    buttonLeft.inputEnabled = true
+    buttonLeft.events.onInputOver.add(function(){left=true;});
+    buttonLeft.events.onInputOut.add(function(){left=false;});
+    buttonLeft.events.onInputDown.add(function(){left=true;});
+    buttonLeft.events.onInputUp.add(function(){left=false;});
 }
