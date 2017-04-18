@@ -23,25 +23,26 @@ function create(){
     paddle1.anchor.setTo(.5);
     paddle1.scale.setTo(1.5);
     paddle2.anchor.setTo(.5);
+    paddle2.scale.setTo(1.5);
     
     // buttons
     buttonUp = game.add.image(580,300,'button');
     buttonUp.anchor.setTo(.5);
-    buttonUp.scale.setTo(.5);
+    buttonUp.scale.setTo(.7);
     buttonUp.angle=-90;
     buttonUp.alpha=.5;
     buttonUp.inputEnabled = true
-    buttonUp.events.onInputDown.add(function(){up=true;console.log("dentro uptrue")});
-    buttonUp.events.onInputUp.add(function(){up=false;});
+    buttonUp.events.onInputOver.add(function(){up=true;console.log("dentro uptrue")});
+    buttonUp.events.onInputOut.add(function(){up=false;});
     
     buttonDown = game.add.image(580,400,'button');
     buttonDown.anchor.setTo(.5);
-    buttonDown.scale.setTo(.5);
+    buttonDown.scale.setTo(.7);
     buttonDown.angle=90;
     buttonDown.alpha=.5;
     buttonDown.inputEnabled = true
-    buttonDown.events.onInputDown.add(function(){down=true;});
-    buttonDown.events.onInputUp.add(function(){down=false;});
+    buttonDown.events.onInputOver.add(function(){down=true;});
+    buttonDown.events.onInputOut.add(function(){down=false;});
     
     aBallBounce = game.add.audio('aBallBounce');
     aBallHit = game.add.audio('aBallHit');
