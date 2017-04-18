@@ -1,10 +1,10 @@
 var game=new Phaser.Game(640, 480, Phaser.AUTO, 'Example', {preload: preload, create: create, update: update});
 
 function preload(){
-    //game.load.image('phaser','assets/images/phaser.png');
     game.load.image('background','assets/images/background.png');
     game.load.image('ball','assets/images/ball.png');
     game.load.image('paddle','assets/images/paddle.png');
+    game.load.image('button','assets/images/button.png');
     
     game.load.audio('aBallBounce',['assets/audio/ballBounce.m4a','assets/audio/ballBounce.ogg']);
     game.load.audio('aBallHit',['assets/audio/ballHit.m4a','assets/audio/ballHit.ogg']);
@@ -12,9 +12,8 @@ function preload(){
 }
 
 var p1score = p2score = 0;
-
+var up=false, down=false;
 function create(){
-    game.add.sprite(0,0,'phaser');
     game.add.image(0,0,'background');
     ball = game.add.sprite(game.world.centerX,game.world.centerY,'ball');
     paddle1 = game.add.sprite(50,game.world.centerY,'paddle');
@@ -22,6 +21,25 @@ function create(){
     ball.anchor.setTo(.5);
     paddle1.anchor.setTo(.5);
     paddle2.anchor.setTo(.5);
+    
+    // buttons
+    buttonUp = game.add.image(580,300,'button');
+    buttonUp.anchor.setTo(.5);
+    buttonUp.scale.setTo(.5);
+    buttonUp.angle=-90;
+    buttonUp.alpha=.5;
+    buttonUp.inputEnabled = true
+    buttonUp.events.onInputDown.add(function(){up=true;console.log("dentro uptrue")});
+    buttonUp.events.onInputUp.add(function(){up=false;});
+    
+    buttonDown = game.add.image(580,400,'button');
+    buttonDown.anchor.setTo(.5);
+    buttonDown.scale.setTo(.5);
+    buttonDown.angle=90;
+    buttonDown.alpha=.5;
+    buttonDown.inputEnabled = true
+    buttonDown.events.onInputDown.add(function(){down=true;});
+    buttonDown.events.onInputUp.add(function(){down=false;});
     
     aBallBounce = game.add.audio('aBallBounce');
     aBallHit = game.add.audio('aBallHit');
@@ -65,9 +83,11 @@ function create(){
 
 function update(){
     
-    if(p1up.isDown)
+    console.log(up,down);
+    
+    if(p1up.isDown || up)
         paddle1.body.velocity.y=-600;
-    else if(p1down.isDown)
+    else if(p1down.isDown||down)
         paddle1.body.velocity.y=600;
     else
         paddle1.body.velocity.y=0;
