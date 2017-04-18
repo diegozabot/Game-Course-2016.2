@@ -72,6 +72,8 @@ function buttons(){
     buttonUp.inputEnabled = true
     buttonUp.events.onInputOver.add(function(){up=true;});
     buttonUp.events.onInputOut.add(function(){up=false;});
+    buttonUp.events.onInputDown.add(function(){up=true;});
+    buttonUp.events.onInputUp.add(function(){up=false;});
     
     buttonDown = game.add.image(600,400,'button');
     buttonDown.anchor.setTo(.5);
@@ -81,6 +83,8 @@ function buttons(){
     buttonDown.inputEnabled = true
     buttonDown.events.onInputOver.add(function(){down=true;});
     buttonDown.events.onInputOut.add(function(){down=false;});
+    buttonDown.events.onInputDown.add(function(){down=true;});
+    buttonDown.events.onInputUp.add(function(){down=false;});
     
     buttonRight = game.add.image(700,400,'button');
     buttonRight.anchor.setTo(.5);
@@ -90,6 +94,8 @@ function buttons(){
     buttonRight.inputEnabled = true
     buttonRight.events.onInputOver.add(function(){right=true;});
     buttonRight.events.onInputOut.add(function(){right=false;});
+    buttonRight.events.onInputDown.add(function(){right=true;});
+    buttonRight.events.onInputUp.add(function(){right=false;});
     
     buttonLeft = game.add.image(500,400,'button');
     buttonLeft.anchor.setTo(.5);
@@ -99,4 +105,6 @@ function buttons(){
     buttonLeft.inputEnabled = true
     buttonLeft.events.onInputOver.add(function(){left=true;});
     buttonLeft.events.onInputOut.add(function(){left=false;});
+    buttonLeft.events.onInputDown.add(function(){left=true;});
+    buttonLeft.events.onInputUp.add(function(){left=false;});
 }
