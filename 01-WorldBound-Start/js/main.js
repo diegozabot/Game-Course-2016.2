@@ -1,4 +1,4 @@
-var game=new Phaser.Game(635, 545, Phaser.AUTO, 'Example', {preload: preload, create: create, update: update});
+var game=new Phaser.Game(635, 545, Phaser.CANVAS, 'Example', {preload: preload, create: create, update: update});
 
 function preload(){
     game.load.image('phaser','assets/images/phaser.png');
