@@ -149,6 +149,8 @@ function buttons(){
     buttonUp.inputEnabled = true
     buttonUp.events.onInputOver.add(function(){up=true;});
     buttonUp.events.onInputOut.add(function(){up=false;});
+    buttonUp.events.onInputDown.add(function(){up=true;});
+    buttonUp.events.onInputUp.add(function(){up=false;});
     
     buttonDown = game.add.image(560,400,'button');
     buttonDown.anchor.setTo(.5);
@@ -158,4 +160,6 @@ function buttons(){
     buttonDown.inputEnabled = true
     buttonDown.events.onInputOver.add(function(){down=true;});
     buttonDown.events.onInputOut.add(function(){down=false;});
+    buttonDown.events.onInputDown.add(function(){down=true;});
+    buttonDown.events.onInputUp.add(function(){down=false;});
 }
