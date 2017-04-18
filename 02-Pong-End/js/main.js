@@ -45,10 +45,10 @@ function create(){
     aBallHit = game.add.audio('aBallHit');
     aBallMissed = game.add.audio('aBallMissed');
     
+    // full screen centered
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.pageAlignHorizontally = true;
     game.scale.pageAlignVertically = true;
-    
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.physics.enable([ball, paddle1, paddle2]);

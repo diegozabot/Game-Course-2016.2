@@ -8,6 +8,11 @@ function preload(){
 }
 
 function create(){
+    // full screen centered
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    
     game.add.sprite(0,0,'phaser');
     ball = game.add.sprite(100,100,'ball');
     
