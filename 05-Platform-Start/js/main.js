@@ -1,4 +1,4 @@
-var game=new Phaser.Game(500, 340, Phaser.AUTO, 'Example', {preload: preload, create: create, update: update});
+var game=new Phaser.Game(500, 340, Phaser.CANVAS, 'Example', {preload: preload, create: create, update: update});
 
 var player;
 var score=0;
