@@ -64,44 +64,44 @@ function endGame(a,b){
 }
 function buttons(){
     // buttons
-    buttonUp = game.add.image(600,220,'button');
+    buttonUp = game.add.image(80,200,'button');
     buttonUp.anchor.setTo(.5);
     buttonUp.scale.setTo(.7);
     buttonUp.angle=-90;
-    buttonUp.alpha=.5;
+    buttonUp.alpha=.1;
     buttonUp.inputEnabled = true
     buttonUp.events.onInputOver.add(function(){up=true;});
     buttonUp.events.onInputOut.add(function(){up=false;});
     buttonUp.events.onInputDown.add(function(){up=true;});
     buttonUp.events.onInputUp.add(function(){up=false;});
     
-    buttonDown = game.add.image(600,350,'button');
+    buttonDown = game.add.image(80,330,'button');
     buttonDown.anchor.setTo(.5);
     buttonDown.scale.setTo(.7);
     buttonDown.angle=90;
-    buttonDown.alpha=.5;
+    buttonDown.alpha=.2;
     buttonDown.inputEnabled = true
     buttonDown.events.onInputOver.add(function(){down=true;});
     buttonDown.events.onInputOut.add(function(){down=false;});
     buttonDown.events.onInputDown.add(function(){down=true;});
     buttonDown.events.onInputUp.add(function(){down=false;});
     
-    buttonRight = game.add.image(720,350,'button');
+    buttonRight = game.add.image(720,330,'button');
     buttonRight.anchor.setTo(.5);
     buttonRight.scale.setTo(.7);
     buttonRight.angle=0;
-    buttonRight.alpha=.5;
+    buttonRight.alpha=.3;
     buttonRight.inputEnabled = true
     buttonRight.events.onInputOver.add(function(){right=true;});
     buttonRight.events.onInputOut.add(function(){right=false;});
     buttonRight.events.onInputDown.add(function(){right=true;});
     buttonRight.events.onInputUp.add(function(){right=false;});
     
-    buttonLeft = game.add.image(480,350,'button');
+    buttonLeft = game.add.image(590,330,'button');
     buttonLeft.anchor.setTo(.5);
     buttonLeft.scale.setTo(.7);
     buttonLeft.angle=180;
-    buttonLeft.alpha=.5;
+    buttonLeft.alpha=.1;
     buttonLeft.inputEnabled = true
     buttonLeft.events.onInputOver.add(function(){left=true;});
     buttonLeft.events.onInputOut.add(function(){left=false;});
