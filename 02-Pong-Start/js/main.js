@@ -1,4 +1,4 @@
-var game = new Phaser.Game(640, 480, Phaser.AUTO, 'Pong', {preload: preload, create: create, update: update});
+var game = new Phaser.Game(640, 480, Phaser.CANVAS, 'Pong', {preload: preload, create: create, update: update});
 
 function preload(){
     game.load.image('background','assets/images/background.png');
