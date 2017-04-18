@@ -26,16 +26,16 @@ function create(){
     paddle2.scale.setTo(1.5);
     
     // buttons
-    buttonUp = game.add.image(580,300,'button');
+    buttonUp = game.add.image(560,260,'button');
     buttonUp.anchor.setTo(.5);
     buttonUp.scale.setTo(.7);
     buttonUp.angle=-90;
     buttonUp.alpha=.5;
     buttonUp.inputEnabled = true
-    buttonUp.events.onInputOver.add(function(){up=true;console.log("dentro uptrue")});
+    buttonUp.events.onInputOver.add(function(){up=true;});
     buttonUp.events.onInputOut.add(function(){up=false;});
     
-    buttonDown = game.add.image(580,400,'button');
+    buttonDown = game.add.image(560,400,'button');
     buttonDown.anchor.setTo(.5);
     buttonDown.scale.setTo(.7);
     buttonDown.angle=90;
@@ -85,8 +85,6 @@ function create(){
 }
 
 function update(){
-    
-    console.log(up,down);
     
     if(p1up.isDown || up)
         paddle1.body.velocity.y=-600;
