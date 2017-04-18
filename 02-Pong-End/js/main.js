@@ -19,7 +19,9 @@ function create(){
     paddle1 = game.add.sprite(50,game.world.centerY,'paddle');
     paddle2 = game.add.sprite(590,game.world.centerY,'paddle');
     ball.anchor.setTo(.5);
+    ball..scale.setTo(1.5);
     paddle1.anchor.setTo(.5);
+    paddle1.scale.setTo(1.5);
     paddle2.anchor.setTo(.5);
     
     // buttons
