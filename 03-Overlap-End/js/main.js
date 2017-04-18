@@ -64,7 +64,7 @@ function endGame(a,b){
 }
 function buttons(){
     // buttons
-    buttonUp = game.add.image(600,300,'button');
+    buttonUp = game.add.image(600,220,'button');
     buttonUp.anchor.setTo(.5);
     buttonUp.scale.setTo(.7);
     buttonUp.angle=-90;
@@ -75,7 +75,7 @@ function buttons(){
     buttonUp.events.onInputDown.add(function(){up=true;});
     buttonUp.events.onInputUp.add(function(){up=false;});
     
-    buttonDown = game.add.image(600,400,'button');
+    buttonDown = game.add.image(600,350,'button');
     buttonDown.anchor.setTo(.5);
     buttonDown.scale.setTo(.7);
     buttonDown.angle=90;
@@ -86,7 +86,7 @@ function buttons(){
     buttonDown.events.onInputDown.add(function(){down=true;});
     buttonDown.events.onInputUp.add(function(){down=false;});
     
-    buttonRight = game.add.image(700,400,'button');
+    buttonRight = game.add.image(720,350,'button');
     buttonRight.anchor.setTo(.5);
     buttonRight.scale.setTo(.7);
     buttonRight.angle=0;
@@ -97,7 +97,7 @@ function buttons(){
     buttonRight.events.onInputDown.add(function(){right=true;});
     buttonRight.events.onInputUp.add(function(){right=false;});
     
-    buttonLeft = game.add.image(500,400,'button');
+    buttonLeft = game.add.image(480,350,'button');
     buttonLeft.anchor.setTo(.5);
     buttonLeft.scale.setTo(.7);
     buttonLeft.angle=180;
