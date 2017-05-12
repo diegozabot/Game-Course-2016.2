@@ -37,6 +37,7 @@ function create(){
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.physics.enable(chick);
     chick.body.collideWorldBounds=true;
+    chick.body.setSize(12,15,2,3);
     
     game.physics.enable(frutas);
     frutas.setAll('body.collideWorldBounds', true);
