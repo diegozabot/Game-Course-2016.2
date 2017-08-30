@@ -26,7 +26,7 @@ function preload(){
     game.load.spritesheet('kunai','assets/images/Kunai.png');
     game.load.spritesheet('gun','assets/images/gun.png');
     game.load.spritesheet('fire','assets/images/fire.png', 172, 139, 5);
-    game.load.spritesheet('jelly','assets/images/jelly.png', 346, 329);
+    game.load.spritesheet('jelly','assets/images/Jelly.png', 346, 329);
     
      game.load.audio('comer', 'assets/audio/comer.mp3');
      game.load.audio('end', 'assets/audio/end.mp3');
